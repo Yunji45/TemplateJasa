@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Mengambil Nilai id</h1>
+    <p>Nama : ihya , Nlai <span class="nilai" value="60" id="nilai_ihya">60</span></p>
+    <button id="tampilan_ihya">Tampilkan</button>
+    <button id="ubah">ubah</button>
+
+    <h1>Mengambil nilai input</h1>
+    <form onsubmit="return false">
+        <label>Ihya Natik Wibowo: </label>
+        <input type="text" id="input_form" value="1000"/>
+        <button id="tombol_value">Tampilkan</button>
+        <button id="ds">kirim</button>
+    </form>
+
+</body>
+<!-- JavaScript -->
+<script>
+    document.getElementById("tampilan_ihya");
+    addEventListener("click" , tomboldarurat);
+    document.getElementById("ubah");
+    addEventListener("click" , tombolset);
+    document.getElementById("tombol_value");
+    addEventListener("click", jalan);
+    addEventListener("click" ,setting);
+    //mengambil get value   
+    function tomboldarurat(){
+        var nilai_ihya=document.getElementById("nilai_ihya").innerHTML;
+        document.getElementById("tampilan_ihya").innerHTML=nilai_ihya;
+    }
+    //set value
+    function tombolset(){
+        const nilai_ihya=document.getElementById("nilai_ihya").innerHTML;
+        const yu = new Set(nilai_ihya);
+        console.log(yu); //hasil array 6 dan 0
+        console.log(yu.clear());
+    }
+    function jalan (){
+        var nilaiInput=document.getElementById("input_form").value;
+        document.getElementById("tombol_value").innerHTML=nilaiInput;
+    }
+    function setting(){
+        const nilaiInput=document.getElementById("input_form").innerHTML;
+        const hasil = new Set(nilaiInput);
+        const addValue = hasil.add({ nilaiInput: "NATIK"});
+        console.log(addValue);
+    }
+</script>
+</html>
